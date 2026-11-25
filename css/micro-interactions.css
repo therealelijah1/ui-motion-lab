@@ -1,0 +1,23 @@
+/* Button press */
+.btn {
+  transition: transform var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out);
+}
+.btn:active { transform: scale(0.97); }
+
+/* Toggle switch */
+.toggle { width: 44px; height: 24px; border-radius: 999px; background: #d4d4d0; position: relative;
+  transition: background-color var(--duration-base) var(--ease-out); }
+.toggle::after { content: ""; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px;
+  border-radius: 50%; background: #fff; transition: transform var(--duration-base) var(--ease-spring); }
+.toggle[aria-checked="true"] { background: #2f5bff; }
+.toggle[aria-checked="true"]::after { transform: translateX(20px); }
+
+/* Card lift */
+.card { transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out); }
+.card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1); }
+
+/* Fade-up on reveal (paired with js/reveal.js) */
+[data-reveal] { opacity: 0; transform: translateY(16px);
+  transition: opacity var(--duration-slow) var(--ease-out), transform var(--duration-slow) var(--ease-out); }
+[data-reveal].is-visible { opacity: 1; transform: none; }
