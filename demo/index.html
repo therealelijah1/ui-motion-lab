@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI Motion Lab demo</title>
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/micro-interactions.css" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 880px; margin: 0 auto; padding: 48px 24px; background: #f7f7f5; }
+    .row { display: flex; gap: 16px; align-items: center; margin: 32px 0; }
+    .btn { background: #111; color: #fff; border: 0; padding: 12px 18px; border-radius: 8px; cursor: pointer; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { background: #fff; padding: 24px; border-radius: 12px; min-height: 120px; }
+    .toggle { border: 0; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>UI Motion Lab</h1>
+  <div class="row">
+    <button class="btn">Press me</button>
+    <button class="toggle" role="switch" aria-checked="false" aria-label="Demo toggle"
+      onclick="this.setAttribute('aria-checked', this.getAttribute('aria-checked') !== 'true')"></button>
+  </div>
+  <div class="grid">
+    <div class="card" data-reveal>One</div>
+    <div class="card" data-reveal>Two</div>
+    <div class="card" data-reveal>Three</div>
+  </div>
+  <script type="module">
+    import { initReveal } from "../js/reveal.js";
+    initReveal();
+  </script>
+</body>
+</html>
